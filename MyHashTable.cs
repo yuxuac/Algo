@@ -1,4 +1,4 @@
-namespace pg1
+namespace Algo
 {
     public class MyHashTable
     {

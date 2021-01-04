@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace pg1
+namespace Algo
 {
     public class MyGraph
     {

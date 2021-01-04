@@ -1,6 +1,6 @@
 using System;
 
-namespace pg1
+namespace Algo
 {
     public class Node
     {

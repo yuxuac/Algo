@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json;
 
-namespace pg1
+namespace Algo
 {
     public class Algo
     {
