@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text.Json;
+using algo.Algorithm;
 
 namespace Algo
 {
@@ -9,25 +10,37 @@ namespace Algo
     {
         static void Main(string[] args)
         {
-            MyGraph graph = new MyGraph();
-            graph.AddVertex(0);
-            graph.AddVertex(1);
-            graph.AddVertex(2);
-            graph.AddVertex(3);
-            graph.AddVertex(4);
-            graph.AddVertex(5);
-            graph.AddVertex(6);
+            //int[] array = new int[] { 3, 7, 8, 5, 2, 1, 9, 5, 4 };
+			int[] array = new int[] { 71, 61, 15, 90, 64, 25, 53, 63, 8, 51, 69, 16, 15, 68, 54, 80, 44, 19, 61, 53, 86, 90, 74, 79, 99, 16, 80, 74, 95, 1, 78, 37, 26, 66, 56, 80, 15, 14, 10, 59, 93, 34, 34, 92, 9, 61, 8, 42, 50, 99, 94, 56, 34, 13, 38, 14, 100, 76, 10, 24, 47, 49, 92, 94, 92, 63, 16, 68, 14, 86, 52, 95, 22, 9, 35, 57, 79, 11, 22, 63, 45, 26, 64, 64, 90, 83, 4, 90, 91, 37, 10, 64, 34, 27, 51, 48, 35, 40, 3, 76 };
+            //int[] array = new int[] { 7, 8, 5, 9, 5, 4 };
+            //int[] array = new int[] { 8, 9 };
+            //int[] array = new int[] { 1, 4, 16, 14, 9 };
+            Sorting.QuickSort(array);
+            Sorting.Print(array);
+            ;
+            // var val1 = Recursion.ReverseStringLoop("I am Bob");
+            // var val2 = Recursion.ReverseStringRecursive("I am Bob");
+            // Console.WriteLine(val1);
+            /// ---
+            // MyGraph graph = new MyGraph();
+            // graph.AddVertex(0);
+            // graph.AddVertex(1);
+            // graph.AddVertex(2);
+            // graph.AddVertex(3);
+            // graph.AddVertex(4);
+            // graph.AddVertex(5);
+            // graph.AddVertex(6);
 
-            graph.AddEdge(3, 1);
-            graph.AddEdge(3, 4);
-            graph.AddEdge(4, 2);
-            graph.AddEdge(4, 5);
-            graph.AddEdge(1, 2);
-            graph.AddEdge(1, 0);
-            graph.AddEdge(0, 2);
-            graph.AddEdge(6, 5);
+            // graph.AddEdge(3, 1);
+            // graph.AddEdge(3, 4);
+            // graph.AddEdge(4, 2);
+            // graph.AddEdge(4, 5);
+            // graph.AddEdge(1, 2);
+            // graph.AddEdge(1, 0);
+            // graph.AddEdge(0, 2);
+            // graph.AddEdge(6, 5);
 
-            graph.ShowConnections();
+            // graph.ShowConnections();
 
             // var array1 = new int[] { 2, 1, 7, -3, 9, 5, -2 };
             // var result = Algo1.IsSumExistsInArray(array1, 5);
