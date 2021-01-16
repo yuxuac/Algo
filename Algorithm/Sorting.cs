@@ -121,7 +121,7 @@ namespace algo.Algorithm
         {
             if (array.Length <= 1)
                 return;
-            else if (array.Length == 2)
+            else if (array.Length == 2) // O(1)
             {
                 if (array[0] > array[1])
                 {
@@ -140,13 +140,13 @@ namespace algo.Algorithm
                 int[] rightArray = new int[array.Length - mid];
                 Array.Copy(array, mid, rightArray, 0, array.Length - mid);
 
-                MergeSort(leftArray);
-                MergeSort(rightArray);
+                MergeSort(leftArray); // O(n/2)
+                MergeSort(rightArray); // O(n/2)
 
                 int i = 0;
                 int il = 0;
                 int ir = 0;
-                while (i < array.Length)
+                while (i < array.Length) // O(n)
                 {
                     if(il >= leftArray.Length)
                     {

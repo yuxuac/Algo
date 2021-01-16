@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Algo
 {
@@ -20,6 +21,11 @@ namespace Algo
         public MyBinarySearchTree()
         {
             this.root = null;
+        }
+
+        public Node GetRoot()
+        {
+            return this.root;
         }
 
         public Node Insert(int val)
@@ -92,7 +98,7 @@ namespace Algo
                     // Can't find any.
                     if (currentNode == null)
                         break;
-                    
+
                     // Find one.
                     if (currentNode.Value == val)
                         return Tuple.Create<Node, Node>(currentNode, currentParentNode);
@@ -161,6 +167,83 @@ namespace Algo
                 return true;
             }
             return false;
+        }
+
+        public void BFS()
+        {
+            var currentNode = this.root;
+            var queue = new Queue<Node>();
+            List<Node> result = new List<Node>();
+            queue.Enqueue(currentNode);
+
+            while (queue.Count > 0)
+            {
+                currentNode = queue.Dequeue();
+                Console.Write(currentNode.Value + "->");
+                result.Add(currentNode);
+                if (currentNode.Left != null)
+                    queue.Enqueue(currentNode.Left);
+                if (currentNode.Right != null)
+                    queue.Enqueue(currentNode.Right);
+            }
+        }
+
+        public List<Node> BFSResursive(Queue<Node> queue, List<Node> result)
+        {
+            if (queue.Count <= 0)
+                return result;
+
+            var currentNode = queue.Dequeue();
+            result.Add(currentNode);
+            Console.Write(currentNode.Value + "->");
+            if (currentNode.Left != null)
+                queue.Enqueue(currentNode.Left);
+            if (currentNode.Right != null)
+                queue.Enqueue(currentNode.Right);
+
+            return BFSResursive(queue, result);
+        }
+
+        /*
+             9
+         4      20
+       1   6  15  170
+
+        InOrder (left-mid-right) [1, 4, 6, 9, 15, 20, 170]
+        PreOrder (mid-left-right) [9, 4, 1, 6, 20, 15, 170]
+        PostOrder (left-right-mid) [1, 6, 4, 15, 170, 20, 9]
+        */
+        public void DFS_InOrder(Node node)
+        {
+            if (node == null) return;
+
+            if (node.Left != null)
+                DFS_InOrder(node.Left);
+            Console.WriteLine(node.Value + "->");
+            if (node.Right != null)
+                DFS_InOrder(node.Right);
+        }
+
+        public void DFS_PreOrder(Node node)
+        {
+            if (node == null) return;
+
+            Console.WriteLine(node.Value + "->");
+            if (node.Left != null)
+                DFS_PreOrder(node.Left);
+            if (node.Right != null)
+                DFS_PreOrder(node.Right);
+        }
+
+        public void DFS_PostOrder(Node node)
+        {
+            if (node == null) return;
+            
+            if (node.Left != null)
+                DFS_PostOrder(node.Left);
+            if (node.Right != null)
+                DFS_PostOrder(node.Right);
+            Console.WriteLine(node.Value + "->");
         }
     }
 }

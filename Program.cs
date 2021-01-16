@@ -11,13 +11,13 @@ namespace Algo
         static void Main(string[] args)
         {
             //int[] array = new int[] { 3, 7, 8, 5, 2, 1, 9, 5, 4 };
-			int[] array = new int[] { 71, 61, 15, 90, 64, 25, 53, 63, 8, 51, 69, 16, 15, 68, 54, 80, 44, 19, 61, 53, 86, 90, 74, 79, 99, 16, 80, 74, 95, 1, 78, 37, 26, 66, 56, 80, 15, 14, 10, 59, 93, 34, 34, 92, 9, 61, 8, 42, 50, 99, 94, 56, 34, 13, 38, 14, 100, 76, 10, 24, 47, 49, 92, 94, 92, 63, 16, 68, 14, 86, 52, 95, 22, 9, 35, 57, 79, 11, 22, 63, 45, 26, 64, 64, 90, 83, 4, 90, 91, 37, 10, 64, 34, 27, 51, 48, 35, 40, 3, 76 };
+			//int[] array = new int[] { 71, 61, 15, 90, 64, 25, 53, 63, 8, 51, 69, 16, 15, 68, 54, 80, 44, 19, 61, 53, 86, 90, 74, 79, 99, 16, 80, 74, 95, 1, 78, 37, 26, 66, 56, 80, 15, 14, 10, 59, 93, 34, 34, 92, 9, 61, 8, 42, 50, 99, 94, 56, 34, 13, 38, 14, 100, 76, 10, 24, 47, 49, 92, 94, 92, 63, 16, 68, 14, 86, 52, 95, 22, 9, 35, 57, 79, 11, 22, 63, 45, 26, 64, 64, 90, 83, 4, 90, 91, 37, 10, 64, 34, 27, 51, 48, 35, 40, 3, 76 };
             //int[] array = new int[] { 7, 8, 5, 9, 5, 4 };
             //int[] array = new int[] { 8, 9 };
             //int[] array = new int[] { 1, 4, 16, 14, 9 };
-            Sorting.QuickSort(array);
-            Sorting.Print(array);
-            ;
+            // Sorting.QuickSort(array);
+            // Sorting.Print(array);
+            // ;
             // var val1 = Recursion.ReverseStringLoop("I am Bob");
             // var val2 = Recursion.ReverseStringRecursive("I am Bob");
             // Console.WriteLine(val1);
@@ -76,10 +76,64 @@ namespace Algo
             // myBST.Insert(55);
             // myBST.Insert(64);
             // myBST.Insert(57);
+            /*
+                 75
+               /   \
+             34     77  
+            /   \
+          26     52
+                /   \
+               38    62
+                    /  \
+                  55   64
+                   \
+                    57
+            */
 
-            // var node = myBST.Lookup(52);
-            // var result = myBST.Remove(0);
+            //var node = myBST.Lookup(52);
+            //var result = myBST.Remove(0);
 
+
+            var myBST = new MyBinarySearchTree();
+            myBST.Insert(9);
+            myBST.Insert(4);
+            myBST.Insert(6);
+            myBST.Insert(20);
+            myBST.Insert(170);
+            myBST.Insert(15);
+            myBST.Insert(1);
+            myBST.Insert(3);
+            myBST.Insert(0);
+            myBST.Insert(5);
+            myBST.Insert(7);
+            myBST.Insert(14);
+            myBST.Insert(16);
+            myBST.Insert(31);
+            myBST.Insert(180);
+            /*
+                   9
+               /       \
+              4         20
+            /  \       /   \
+           1    6     15   170
+          / \  / \   / \   / \
+         0  3  5  7 14 16 31 180
+            */
+            // BFS: Good: Shorest path, Closer nodes; Bad: Cost more memory
+            var queue = new Queue<Node>();
+            queue.Enqueue(myBST.GetRoot());
+            Console.WriteLine("BFSResursive:");
+            myBST.BFSResursive(queue, new List<Node>()); 
+
+            // DFS: Good: Less momory, To answer: does path exists?; Bad: Can get slow.
+            Console.WriteLine("DFS_InOrder:");
+            myBST.DFS_InOrder(myBST.GetRoot()); // left-mid-right:  [0, 1, 3, 4, 5, 6, 7, 9, 14, 15, 16, 20, 31, 170, 180]
+            Console.WriteLine("DFS_PreOrder:");
+            myBST.DFS_PreOrder(myBST.GetRoot()); // mid-left-right: [9, 4, 1, 0, 3, 6, 5, 7, 20, 15, 14, 16, 170, 31, 180]
+            Console.WriteLine("DFS_PostOrder:");
+            myBST.DFS_PostOrder(myBST.GetRoot()); // left-right-mid:[0, 3, 1, 5, 7, 6, 4, 14, 16, 15, 31, 180, 170, 20, 9]
+;
+            // https://stackoverflow.com/questions/9844193/what-is-the-time-and-space-complexity-of-a-breadth-first-and-depth-first-tree-tr
         }
     }
 }
