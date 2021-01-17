@@ -213,6 +213,8 @@ namespace Algo
         PreOrder (mid-left-right) [9, 4, 1, 6, 20, 15, 170]
         PostOrder (left-right-mid) [1, 6, 4, 15, 170, 20, 9]
         */
+
+        // Space complexity is the height of the tree which is also the height of the call stack.
         public void DFS_InOrder(Node node)
         {
             if (node == null) return;
@@ -220,7 +222,7 @@ namespace Algo
             if (node.Left != null)
                 DFS_InOrder(node.Left);
             Console.WriteLine(node.Value + "->");
-            if (node.Right != null)
+            if (node.Right != null) 
                 DFS_InOrder(node.Right);
         }
 

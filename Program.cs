@@ -93,7 +93,7 @@ namespace Algo
             //var node = myBST.Lookup(52);
             //var result = myBST.Remove(0);
 
-
+/*
             var myBST = new MyBinarySearchTree();
             myBST.Insert(9);
             myBST.Insert(4);
@@ -110,15 +110,15 @@ namespace Algo
             myBST.Insert(16);
             myBST.Insert(31);
             myBST.Insert(180);
-            /*
-                   9
-               /       \
-              4         20
-            /  \       /   \
-           1    6     15   170
-          / \  / \   / \   / \
-         0  3  5  7 14 16 31 180
-            */
+            
+        //            9
+        //        /       \
+        //       4         20
+        //     /  \       /   \
+        //    1    6     15   170
+        //   / \  / \   / \   / \
+        //  0  3  5  7 14 16 31 180
+            
             // BFS: Good: Shorest path, Closer nodes; Bad: Cost more memory
             var queue = new Queue<Node>();
             queue.Enqueue(myBST.GetRoot());
@@ -134,6 +134,18 @@ namespace Algo
             myBST.DFS_PostOrder(myBST.GetRoot()); // left-right-mid:[0, 3, 1, 5, 7, 6, 4, 14, 16, 15, 31, 180, 170, 20, 9]
 ;
             // https://stackoverflow.com/questions/9844193/what-is-the-time-and-space-complexity-of-a-breadth-first-and-depth-first-tree-tr
+            */
+
+            DynamicProgram dp = new DynamicProgram();
+            int index = 102;
+            var val = dp.Fib_Cache2(index);
+            // Fib(102): 5035488507601418376, CalculationTimes: 103
+            // Fib(102): 5035488507601418376, CalculationTimes: 104
+            // Fib(102): 5035488507601418376, CalculationTimes: 101
+
+            Console.WriteLine($"Fib({index}): {val}, CalculationTimes: {dp.CalculationTimes}");
+            
+
         }
     }
 }
