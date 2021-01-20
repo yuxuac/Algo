@@ -147,6 +147,7 @@ namespace Algo
             Console.WriteLine($"Fib({index}): {val}, CalculationTimes: {dp.CalculationTimes}");
             */
 			
+            /*
 			var myLinkedList = new MyLinkedList(10);
 			myLinkedList.Append(5);
 			myLinkedList.Append(16);
@@ -180,6 +181,22 @@ namespace Algo
             myLinkedList.Remove(null, 10);
             myLinkedList.Print();
             // list now: 5->16->1->1
+            */
+
+            var myDoublyLinkedList = new MyDoublyLinkedList(10);
+            myDoublyLinkedList.Append(10);
+            myDoublyLinkedList.Append(5);
+            myDoublyLinkedList.Append(10);
+            myDoublyLinkedList.Append(10);
+            myDoublyLinkedList.Append(6);
+            myDoublyLinkedList.Append(10);
+            myDoublyLinkedList.Append(7);
+
+            myDoublyLinkedList.Remove(null, 10);
+            myDoublyLinkedList.Remove(0, null);
+            myDoublyLinkedList.Remove(1, null);
+            myDoublyLinkedList.Remove(0, null);
+            ;
         }
     }
 }
