@@ -136,6 +136,7 @@ namespace Algo
             // https://stackoverflow.com/questions/9844193/what-is-the-time-and-space-complexity-of-a-breadth-first-and-depth-first-tree-tr
             */
 
+			/*
             DynamicProgram dp = new DynamicProgram();
             int index = 102;
             var val = dp.Fib_Cache2(index);
@@ -144,8 +145,41 @@ namespace Algo
             // Fib(102): 5035488507601418376, CalculationTimes: 101
 
             Console.WriteLine($"Fib({index}): {val}, CalculationTimes: {dp.CalculationTimes}");
+            */
+			
+			var myLinkedList = new MyLinkedList(10);
+			myLinkedList.Append(5);
+			myLinkedList.Append(16);
+            myLinkedList.Print();
+            // list now: 10->5->16
             
+            myLinkedList.Remove(0, null);
+            myLinkedList.Print();
+            // list now: 5->16
 
+            myLinkedList.Prepend(10);
+            myLinkedList.Print();
+            // list now: 10->5->16
+
+            myLinkedList.Remove(2, null);
+            myLinkedList.Print();
+            // list now: 10->5
+
+            myLinkedList.Append(16);
+            myLinkedList.Print();
+            // list now: 10->5->16
+
+            myLinkedList.Append(10);
+            myLinkedList.Append(1);
+            myLinkedList.Append(10);
+            myLinkedList.Append(1);
+            myLinkedList.Append(10);
+            myLinkedList.Print();
+            // list now: 10->5->16->10->1->10->1->10
+
+            myLinkedList.Remove(null, 10);
+            myLinkedList.Print();
+            // list now: 5->16->1->1
         }
     }
 }
