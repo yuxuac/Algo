@@ -132,7 +132,17 @@ namespace Algo
 
         public void Print()
         {
+            var currentNode = this.Head;
+            while (currentNode != null)
+            {
+                if (currentNode.Next != null && currentNode.Next.Pre.Equals(currentNode))
+                    Console.Write(currentNode.Value + "<->");
+                else
+                    Console.Write(currentNode.Value + "->");
 
+                currentNode = currentNode.Next;
+            }
+            Console.WriteLine();
         }
     }
 

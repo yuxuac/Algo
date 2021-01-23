@@ -192,6 +192,8 @@ namespace Algo
             myDoublyLinkedList.Append(10);
             myDoublyLinkedList.Append(7);
 
+            myDoublyLinkedList.Print();
+            
             myDoublyLinkedList.Remove(null, 10);
             myDoublyLinkedList.Remove(0, null);
             myDoublyLinkedList.Remove(1, null);
