@@ -5,27 +5,27 @@ namespace Algo
 {
     public class MyLinkedList
     {
-        public Item Head { get; set; }
-        public Item Tail { get; set; }
+        public Node Head { get; set; }
+        public Node Tail { get; set; }
         public long Length { get; set; }
 
         public MyLinkedList(object val)
         {
-            Head = new Item(val);
+            Head = new Node(val);
             Tail = this.Head;
             Length = 1;
         }
 
         public void Append(object val)
         {
-            this.Tail.Next = new Item(val);
+            this.Tail.Next = new Node(val);
             this.Tail = this.Tail.Next;
             this.Length++;
         }
 
         public void Prepend(object val)
         {
-            var newHead = new Item(val);
+            var newHead = new Node(val);
             newHead.Next = this.Head;
             this.Head = newHead;
             this.Length++;
@@ -42,23 +42,23 @@ namespace Algo
                 this.Append(val);
             else
             {
-                Item currentNode = this.Head;
+                Node currentNode = this.Head;
                 for (int i = 0; i < index - 1; i++)
                 {
                     currentNode = currentNode.Next;
                 }
-                Item addedNode = new Item(val);
-                Item tempNode = currentNode.Next;
+                Node addedNode = new Node(val);
+                Node tempNode = currentNode.Next;
                 addedNode.Next = tempNode;
                 currentNode.Next = addedNode;
             }
         }
 
-		/// <summary>
-		/// Remove nodes within linked list via index or val.
-		/// </summary>
-		/// <param name="index"></param>
-		/// <param name="val"></param>
+        /// <summary>
+        /// Remove nodes within linked list via index or val.
+        /// </summary>
+        /// <param name="index"></param>
+        /// <param name="val"></param>
         public void Remove(long? index, object val)
         {
             if (index.HasValue)
@@ -71,44 +71,66 @@ namespace Algo
                 if (index == 0)
                 {
                     this.Head = this.Head.Next;
-					this.Length--;
+                    this.Length--;
                 }
                 else
                 {
                     var itemPreTheIndex = FindItemViaIndex(index.Value - 1);
                     itemPreTheIndex.Next = itemPreTheIndex.Next.Next;
-					if(index == this.Length - 1)
-					{
-						this.Tail = itemPreTheIndex;
-					}
-					this.Length--;
+                    if (index == this.Length - 1)
+                    {
+                        this.Tail = itemPreTheIndex;
+                    }
+                    this.Length--;
                 }
             }
             else
             {
                 var currentNode = this.Head;
 
-				// Delete head node
-				while(currentNode != null && currentNode.Value.Equals(val))
-				{
-					this.Head = this.Head.Next;
-					currentNode = this.Head;
-					this.Length--;
-				}
-				// Delete other nodes
+                // Delete head node
+                while (currentNode != null && currentNode.Value.Equals(val))
+                {
+                    this.Head = this.Head.Next;
+                    currentNode = this.Head;
+                    this.Length--;
+                }
+                // Delete other nodes
                 while (currentNode != null)
                 {
                     while (currentNode.Next != null && currentNode.Next.Value.Equals(val))
                     {
                         currentNode.Next = currentNode.Next.Next;
-						this.Length--;
+                        this.Length--;
                     }
-					currentNode = currentNode.Next;
+                    currentNode = currentNode.Next;
                 }
             }
         }
 
-        private Item FindItemViaIndex(long index)
+        public void Reverse()
+        {
+            var currentNode = this.Head;
+            this.Tail = this.Head;
+
+            // If there is only one item, no need to reverse
+            if(currentNode.Next == null)
+                return;
+
+            Node preNode = null;
+            Node theNextNode = null;
+            Node tempTail = this.Tail;
+            while (currentNode != null)
+            {
+                theNextNode = currentNode.Next;
+                currentNode.Next = preNode;
+                preNode = currentNode;
+                currentNode = theNextNode;
+            }
+            this.Head = preNode;
+        }
+
+        private Node FindItemViaIndex(long index)
         {
             var currentNode = this.Head;
             long pointer = 0;
@@ -132,11 +154,11 @@ namespace Algo
         }
     }
 
-    public class Item
+    public class Node
     {
         public object Value { get; set; }
-        public Item Next { get; set; }
-        public Item(object val)
+        public Node Next { get; set; }
+        public Node(object val)
         {
             this.Value = val;
         }

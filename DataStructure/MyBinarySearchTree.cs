@@ -3,38 +3,38 @@ using System.Collections.Generic;
 
 namespace Algo
 {
-    public class Node
+    public class TreeNode
     {
-        public Node(int input)
+        public TreeNode(int input)
         {
             this.Value = input;
         }
 
         public int? Value { get; set; }
-        public Node Left { get; set; }
-        public Node Right { get; set; }
+        public TreeNode Left { get; set; }
+        public TreeNode Right { get; set; }
     }
 
     public class MyBinarySearchTree
     {
-        private Node root;
+        private TreeNode root;
         public MyBinarySearchTree()
         {
             this.root = null;
         }
 
-        public Node GetRoot()
+        public TreeNode GetRoot()
         {
             return this.root;
         }
 
-        public Node Insert(int val)
+        public TreeNode Insert(int val)
         {
             var currentNode = this.root;
 
             if (this.root == null)
             {
-                this.root = new Node(val);
+                this.root = new TreeNode(val);
             }
             else
             {
@@ -44,7 +44,7 @@ namespace Algo
                     {
                         if (currentNode.Left == null)
                         {
-                            currentNode.Left = new Node(val);
+                            currentNode.Left = new TreeNode(val);
                             break;
                         }
                         else
@@ -54,7 +54,7 @@ namespace Algo
                     {
                         if (currentNode.Right == null)
                         {
-                            currentNode.Right = new Node(val);
+                            currentNode.Right = new TreeNode(val);
                             break;
                         }
                         else
@@ -71,7 +71,7 @@ namespace Algo
             return currentNode;
         }
 
-        public Tuple<Node, Node> Lookup(int val)
+        public Tuple<TreeNode, TreeNode> Lookup(int val)
         {
             if (this.root == null)
             {
@@ -80,7 +80,7 @@ namespace Algo
             else
             {
                 var currentNode = this.root;
-                Node currentParentNode = null;
+                TreeNode currentParentNode = null;
 
                 while (true)
                 {
@@ -101,7 +101,7 @@ namespace Algo
 
                     // Find one.
                     if (currentNode.Value == val)
-                        return Tuple.Create<Node, Node>(currentNode, currentParentNode);
+                        return Tuple.Create<TreeNode, TreeNode>(currentNode, currentParentNode);
                 }
             }
             return null;
@@ -134,7 +134,7 @@ namespace Algo
                 {
                     var firstRight = currentNode.Right;
                     var currentTarget = firstRight;
-                    Node currentTargetParent = currentNode;
+                    TreeNode currentTargetParent = currentNode;
                     while (true)
                     {
                         if (currentTarget.Left == null)
@@ -172,8 +172,8 @@ namespace Algo
         public void BFS()
         {
             var currentNode = this.root;
-            var queue = new Queue<Node>();
-            List<Node> result = new List<Node>();
+            var queue = new Queue<TreeNode>();
+            List<TreeNode> result = new List<TreeNode>();
             queue.Enqueue(currentNode);
 
             while (queue.Count > 0)
@@ -188,7 +188,7 @@ namespace Algo
             }
         }
 
-        public List<Node> BFSResursive(Queue<Node> queue, List<Node> result)
+        public List<TreeNode> BFSResursive(Queue<TreeNode> queue, List<TreeNode> result)
         {
             if (queue.Count <= 0)
                 return result;
@@ -215,7 +215,7 @@ namespace Algo
         */
 
         // Space complexity is the height of the tree which is also the height of the call stack.
-        public void DFS_InOrder(Node node)
+        public void DFS_InOrder(TreeNode node)
         {
             if (node == null) return;
 
@@ -226,7 +226,7 @@ namespace Algo
                 DFS_InOrder(node.Right);
         }
 
-        public void DFS_PreOrder(Node node)
+        public void DFS_PreOrder(TreeNode node)
         {
             if (node == null) return;
 
@@ -237,7 +237,7 @@ namespace Algo
                 DFS_PreOrder(node.Right);
         }
 
-        public void DFS_PostOrder(Node node)
+        public void DFS_PostOrder(TreeNode node)
         {
             if (node == null) return;
             
