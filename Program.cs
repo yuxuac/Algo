@@ -215,39 +215,65 @@ namespace Algo
             // var n3 = stack.Pop();
             // var n4 = stack.Pop();
 
-            MyStack2 stack = new MyStack2();
-            stack.Push(1);
-            stack.Push(2);
-            stack.Push(3);
-            stack.Push(4);
-            stack.Push(5);
-            stack.Push(6);
-            stack.Push(7);
-            stack.Push(8);
-            stack.Push(9);
-            stack.Push(10);
-            stack.Push(11);
+            // MyStack2 stack = new MyStack2();
+            // stack.Push(1);
+            // stack.Push(2);
+            // stack.Push(3);
+            // stack.Push(4);
+            // stack.Push(5);
+            // stack.Push(6);
+            // stack.Push(7);
+            // stack.Push(8);
+            // stack.Push(9);
+            // stack.Push(10);
+            // stack.Push(11);
 
-            stack.Print();
+            // stack.Print();
 
-            var obj = stack.Peek();
-            obj = stack.Pop();
-            obj = stack.Pop();
-            obj = stack.Pop();
-            obj = stack.Pop();
-            stack.Print();
-            obj = stack.Pop();
-            stack.Print();
-            obj = stack.Pop();
-            obj = stack.Pop();
-            obj = stack.Pop();
-            obj = stack.Pop();
-            obj = stack.Pop();
-            stack.Print();
-            obj = stack.Pop();
-            stack.Print();
+            // var obj = stack.Peek();
+            // obj = stack.Pop();
+            // obj = stack.Pop();
+            // obj = stack.Pop();
+            // obj = stack.Pop();
+            // stack.Print();
+            // obj = stack.Pop();
+            // stack.Print();
+            // obj = stack.Pop();
+            // obj = stack.Pop();
+            // obj = stack.Pop();
+            // obj = stack.Pop();
+            // obj = stack.Pop();
+            // stack.Print();
+            // obj = stack.Pop();
+            // stack.Print();
 
-
+            MyQueue queue = new MyQueue();
+            queue.Enqueue(1);
+            queue.Print();
+            queue.Enqueue(2);
+            queue.Print();
+            queue.Enqueue(3);
+            queue.Print();
+            queue.Enqueue(4);
+            queue.Print();
+            queue.Enqueue(5);
+            queue.Print();
+            var obj = queue.Peek();
+            obj = queue.Dequeue();
+            queue.Print();
+            obj = queue.Dequeue();
+            queue.Print();
+            obj = queue.Dequeue();
+            queue.Print();
+            obj = queue.Dequeue();
+            queue.Print();
+            queue.Enqueue(6);
+            queue.Print();
+            queue.Enqueue(7);
+            queue.Print();
+            queue.Enqueue(8);
+            queue.Print();
+            Console.WriteLine();
         }
     }
 }
