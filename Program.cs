@@ -10,6 +10,25 @@ namespace Algo
     {
         static void Main(string[] args)
         {
+            var myArray = new MyArray();
+            for(int i = 0; i < 101; i++)
+            {
+                myArray.Push(i);
+            }
+            myArray.Print();
+            myArray.Delete(100);
+            myArray.Print();
+            var item = myArray.Pop();
+            myArray.Print();
+            for(int i = 0; i < 100; i++)
+            {
+                item = myArray.Pop();
+                myArray.Print();
+            }
+            item = myArray.Pop();
+            myArray.Print();
+            
+            Console.ReadLine();
             //int[] array = new int[] { 3, 7, 8, 5, 2, 1, 9, 5, 4 };
             //int[] array = new int[] { 71, 61, 15, 90, 64, 25, 53, 63, 8, 51, 69, 16, 15, 68, 54, 80, 44, 19, 61, 53, 86, 90, 74, 79, 99, 16, 80, 74, 95, 1, 78, 37, 26, 66, 56, 80, 15, 14, 10, 59, 93, 34, 34, 92, 9, 61, 8, 42, 50, 99, 94, 56, 34, 13, 38, 14, 100, 76, 10, 24, 47, 49, 92, 94, 92, 63, 16, 68, 14, 86, 52, 95, 22, 9, 35, 57, 79, 11, 22, 63, 45, 26, 64, 64, 90, 83, 4, 90, 91, 37, 10, 64, 34, 27, 51, 48, 35, 40, 3, 76 };
             //int[] array = new int[] { 7, 8, 5, 9, 5, 4 };
@@ -247,33 +266,33 @@ namespace Algo
             // obj = stack.Pop();
             // stack.Print();
 
-            MyQueue queue = new MyQueue();
-            queue.Enqueue(1);
-            queue.Print();
-            queue.Enqueue(2);
-            queue.Print();
-            queue.Enqueue(3);
-            queue.Print();
-            queue.Enqueue(4);
-            queue.Print();
-            queue.Enqueue(5);
-            queue.Print();
-            var obj = queue.Peek();
-            obj = queue.Dequeue();
-            queue.Print();
-            obj = queue.Dequeue();
-            queue.Print();
-            obj = queue.Dequeue();
-            queue.Print();
-            obj = queue.Dequeue();
-            queue.Print();
-            queue.Enqueue(6);
-            queue.Print();
-            queue.Enqueue(7);
-            queue.Print();
-            queue.Enqueue(8);
-            queue.Print();
-            Console.WriteLine();
+            // MyQueue queue = new MyQueue();
+            // queue.Enqueue(1);
+            // queue.Print();
+            // queue.Enqueue(2);
+            // queue.Print();
+            // queue.Enqueue(3);
+            // queue.Print();
+            // queue.Enqueue(4);
+            // queue.Print();
+            // queue.Enqueue(5);
+            // queue.Print();
+            // var obj = queue.Peek();
+            // obj = queue.Dequeue();
+            // queue.Print();
+            // obj = queue.Dequeue();
+            // queue.Print();
+            // obj = queue.Dequeue();
+            // queue.Print();
+            // obj = queue.Dequeue();
+            // queue.Print();
+            // queue.Enqueue(6);
+            // queue.Print();
+            // queue.Enqueue(7);
+            // queue.Print();
+            // queue.Enqueue(8);
+            // queue.Print();
+            // Console.WriteLine();
         }
     }
 }
