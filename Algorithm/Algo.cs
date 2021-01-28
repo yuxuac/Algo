@@ -223,14 +223,41 @@ namespace Algo
 
             for (int i = 0; i < nums.Length; i++)
             {
-                sum = sum + nums[i]; 
+                sum = sum + nums[i];
                 if (sum > maxSum)
-                    maxSum = sum;  
+                    maxSum = sum;
                 if (sum < 0)
-                    sum = 0; 
+                    sum = 0;
             }
             return maxSum;
         }
 
+
+        /*
+        [2,5,1,2,3,5,1,2,4] => return 2
+        [2,1,1,2,3,5,1,2,4] => return 1
+        [2,3,4,5] => return null
+        */
+        public static int? FindFirstRecurringCharacter(int[] array)
+        {
+            if (array == null || array.Length <= 0)
+                return null;
+
+            int? result = null;
+            HashSet<int> hs = new HashSet<int>();
+            for (int i = 0; i < array.Length; i++)
+            {
+                // O(1)
+                if(hs.Contains(array[i]))
+                {
+                    result = array[i];
+                    break;
+                }
+                else
+                    hs.Add(array[i]);
+            }
+
+            return result;
+        }
     }
 }

@@ -10,25 +10,51 @@ namespace Algo
     {
         static void Main(string[] args)
         {
-            var myArray = new MyArray();
-            for(int i = 0; i < 101; i++)
-            {
-                myArray.Push(i);
-            }
-            myArray.Print();
-            myArray.Delete(100);
-            myArray.Print();
-            var item = myArray.Pop();
-            myArray.Print();
-            for(int i = 0; i < 100; i++)
-            {
-                item = myArray.Pop();
-                myArray.Print();
-            }
-            item = myArray.Pop();
-            myArray.Print();
-            
-            Console.ReadLine();
+            int[] a1 = new int[] { 2, 5, 1, 2, 3, 5, 1, 2, 4 };
+            int[] a2 = new int[] { 2, 1, 1, 2, 3, 5, 1, 2, 4 };
+            int[] a3 = new int[] { 2, 3, 4, 5 };
+
+            var val1 = Algo.FindFirstRecurringCharacter(a1);
+            var val2 = Algo.FindFirstRecurringCharacter(a2);
+            var val3 = Algo.FindFirstRecurringCharacter(a3);
+            // var hsTbl = new MyHashTable(5);
+            // hsTbl.Set("apple", 100.0);
+            // hsTbl.Set("pear", 200.0);
+            // hsTbl.Set("zip", 300.0);
+            // hsTbl.Set("gap", 400.0);
+            // hsTbl.Set("grape", 500.0);
+            // hsTbl.Set("rock", 600.0);
+            // hsTbl.Set("gold", 700.0);
+            // hsTbl.Set("pic", 800.0);
+
+            // var keys = hsTbl.Keys();
+            ;
+            // var obj = hsTbl.Get("apple");
+            // obj = hsTbl.Get("pear");
+            // obj = hsTbl.Get("zip");
+            // obj = hsTbl.Get("gap");
+            // obj = hsTbl.Get("grape");
+
+            // var myArray = new MyArray();
+            // for(int i = 0; i < 101; i++)
+            // {
+            //     myArray.Push(i);
+            // }
+            // myArray.Print();
+            // myArray.Delete(100);
+            // myArray.Print();
+            // var item = myArray.Pop();
+            // myArray.Print();
+            // for(int i = 0; i < 100; i++)
+            // {
+            //     item = myArray.Pop();
+            //     myArray.Print();
+            // }
+            // item = myArray.Pop();
+            // myArray.Print();
+
+            // Console.ReadLine();
+
             //int[] array = new int[] { 3, 7, 8, 5, 2, 1, 9, 5, 4 };
             //int[] array = new int[] { 71, 61, 15, 90, 64, 25, 53, 63, 8, 51, 69, 16, 15, 68, 54, 80, 44, 19, 61, 53, 86, 90, 74, 79, 99, 16, 80, 74, 95, 1, 78, 37, 26, 66, 56, 80, 15, 14, 10, 59, 93, 34, 34, 92, 9, 61, 8, 42, 50, 99, 94, 56, 34, 13, 38, 14, 100, 76, 10, 24, 47, 49, 92, 94, 92, 63, 16, 68, 14, 86, 52, 95, 22, 9, 35, 57, 79, 11, 22, 63, 45, 26, 64, 64, 90, 83, 4, 90, 91, 37, 10, 64, 34, 27, 51, 48, 35, 40, 3, 76 };
             //int[] array = new int[] { 7, 8, 5, 9, 5, 4 };
