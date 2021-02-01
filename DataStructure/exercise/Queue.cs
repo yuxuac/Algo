@@ -1,3 +1,5 @@
+using System;
+
 namespace Algo.Exercise
 {
     public class Queue
@@ -12,6 +14,12 @@ namespace Algo.Exercise
             this.Length = 0;
         }
 
+        /*
+        Head        Tail
+          o-->o-->o-->o
+        Head             Tail
+          o-->o-->o-->o-->n
+        */
         public void Enqueue(object obj)
         {
             var newNode = new LstNode(obj);
@@ -29,6 +37,12 @@ namespace Algo.Exercise
             this.Length++;
         }
 
+        /*
+        Head        Tail
+          o-->o-->o-->o
+            Head    Tail
+              o-->o-->o
+        */
         public object Dequeue()
         {
             if(this.Length <= 0)
@@ -56,6 +70,18 @@ namespace Algo.Exercise
                 return null;
             else
                 return this.Head.Value;
+        }
+
+        public void Print()
+        {
+            Console.WriteLine($"Head: {this.Head?.Value} - Tail: {this.Tail?.Value} - Length: {this.Length}");
+            var currentNode = this.Head;
+            while (currentNode != null)
+            {
+                Console.Write(currentNode.Value + "->");
+                currentNode = currentNode.Next;
+            }
+            Console.WriteLine();
         }
     }
 }

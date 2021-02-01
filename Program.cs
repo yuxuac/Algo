@@ -16,7 +16,7 @@ namespace Algo
             // var array2 = new int[] { 4, 1, 2, 10, 5, 20 };
             // var sum = 24;
             // var result = Puzzles.GetClosestPairOfSum(array1, array2, sum);
-            ;
+            //;
             // LinkedList lst = new LinkedList(1);
             // lst.Append(3);
             // lst.Append(4);
@@ -351,22 +351,88 @@ namespace Algo
 
             // lst.Reverse();
 
-            var dlst = new DoublyLinkedList(1);
-            dlst.Append(2);
-            dlst.Append(3);
-            dlst.Append(4);
-            dlst.Append(5);
+            // var dlst = new DoublyLinkedList(1);
+            // dlst.Append(2);
+            // dlst.Append(3);
+            // dlst.Append(4);
+            // dlst.Append(5);
 
-            dlst.Print();
-            dlst.Prepend(0);
-            dlst.Print();
+            // dlst.Print();
+            // dlst.Prepend(0);
+            // dlst.Print();
 
-            dlst.Remove(0);
-            dlst.Print();
-            dlst.Remove(4);
-            dlst.Print();
-            dlst.Remove(1);
-            dlst.Print();
+            // dlst.Remove(0);
+            // dlst.Print();
+            // dlst.Remove(4);
+            // dlst.Print();
+            // dlst.Remove(1);
+            // dlst.Print();
+
+            // Exercise.Queue q = new Exercise.Queue();
+            // q.Enqueue(1);
+            // q.Enqueue(2);
+            // q.Enqueue(3);
+            // q.Enqueue(4);
+            // q.Enqueue(5);
+            // q.Print();
+            // var dt = q.Dequeue();
+            // q.Print();
+            // dt = q.Dequeue();
+            // q.Print();
+            // dt = q.Dequeue();
+            // q.Print();
+            // dt = q.Dequeue();
+            // q.Print();
+            // dt = q.Dequeue();
+            // q.Print();
+            // dt = q.Dequeue();
+            // q.Print();
+
+
+            // Exercise.Stack stack = new Exercise.Stack();
+            // stack.Push(1);
+            // stack.Push(2);
+            // stack.Push(3);
+            // stack.Push(4);
+            // stack.Push(5);
+            // stack.Print();
+            // stack.Pop();
+            // stack.Print();
+            // stack.Pop();
+            // stack.Print();
+            // stack.Pop();
+            // stack.Print();
+            // stack.Pop();
+            // stack.Print();
+            // stack.Pop();
+            // stack.Print();
+
+            Exercise.StackImplementedQueue queue = new StackImplementedQueue();
+            queue.Push(1);
+            queue.Push(2);
+            queue.Push(3);
+            queue.Push(4);
+            queue.Push(5);
+            var r = queue.Pop();
+            r = queue.Pop();
+            r = queue.Pop();
+            r = queue.Pop();
+            r = queue.Pop();
+            r = queue.Pop();
+
+            Exercise.QueueImplementedStack stack = new QueueImplementedStack();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
+            stack.Push(4);
+            stack.Push(5);
+            var r1 = stack.Pop();
+            r1 = stack.Pop();
+            r1 = stack.Pop();
+            r1 = stack.Pop();
+            r1 = stack.Pop();
+            r1 = stack.Pop();
+
         }
     }
 }

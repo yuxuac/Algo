@@ -54,5 +54,15 @@ namespace Algo.Exercise
             else 
                 return this.Data[this.Length - 1];
         }
+
+        public void Print()
+        {
+            Console.WriteLine($"Length: {this.Length}");
+            for (int i = 0; i < this.Length; i++)
+            {
+                Console.Write(this.Data[i] + "->");
+            }
+            Console.WriteLine();
+        }
     }
 }
