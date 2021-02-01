@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text.Json;
 using algo.Algorithm;
+using Algo.Exercise;
 
 namespace Algo
 {
@@ -10,13 +11,28 @@ namespace Algo
     {
         static void Main(string[] args)
         {
-            int[] a1 = new int[] { 2, 5, 1, 2, 3, 5, 1, 2, 4 };
-            int[] a2 = new int[] { 2, 1, 1, 2, 3, 5, 1, 2, 4 };
-            int[] a3 = new int[] { 2, 3, 4, 5 };
 
-            var val1 = Algo.FindFirstRecurringCharacter(a1);
-            var val2 = Algo.FindFirstRecurringCharacter(a2);
-            var val3 = Algo.FindFirstRecurringCharacter(a3);
+            // var array1 = new int[] { -1, 3, 8, 2, 9, 5 };
+            // var array2 = new int[] { 4, 1, 2, 10, 5, 20 };
+            // var sum = 24;
+            // var result = Puzzles.GetClosestPairOfSum(array1, array2, sum);
+            ;
+            // LinkedList lst = new LinkedList(1);
+            // lst.Append(3);
+            // lst.Append(4);
+            // lst.Append(5);
+            // lst.Insert(1, 2);
+            // lst.Remove(0);
+            // lst.Remove(lst.Length - 1);
+            // lst.Remove(1);
+            // ;
+            // int[] a1 = new int[] { 2, 5, 1, 2, 3, 5, 1, 2, 4 };
+            // int[] a2 = new int[] { 2, 1, 1, 2, 3, 5, 1, 2, 4 };
+            // int[] a3 = new int[] { 2, 3, 4, 5 };
+
+            // var val1 = Algo.FindFirstRecurringCharacter(a1);
+            // var val2 = Algo.FindFirstRecurringCharacter(a2);
+            // var val3 = Algo.FindFirstRecurringCharacter(a3);
             // var hsTbl = new MyHashTable(5);
             // hsTbl.Set("apple", 100.0);
             // hsTbl.Set("pear", 200.0);
@@ -319,6 +335,38 @@ namespace Algo
             // queue.Enqueue(8);
             // queue.Print();
             // Console.WriteLine();
+
+
+
+            // var lst = new LinkedList(1);
+            // lst.Append(2);
+            // lst.Append(3);
+            // lst.Append(4);
+            // lst.Reverse();
+
+            // lst.Append(10);
+            // lst.Append(6);
+            // lst.Append(10);
+            // lst.Append(7);
+
+            // lst.Reverse();
+
+            var dlst = new DoublyLinkedList(1);
+            dlst.Append(2);
+            dlst.Append(3);
+            dlst.Append(4);
+            dlst.Append(5);
+
+            dlst.Print();
+            dlst.Prepend(0);
+            dlst.Print();
+
+            dlst.Remove(0);
+            dlst.Print();
+            dlst.Remove(4);
+            dlst.Print();
+            dlst.Remove(1);
+            dlst.Print();
         }
     }
 }
