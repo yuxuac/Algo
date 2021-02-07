@@ -12,11 +12,13 @@ namespace algo.Algorithm
 
         public static string RecursiveHello()
         {
+            // 1. Base base
             if (Counter < 3)
             {
                 Counter++;
                 return "Done";
             }
+            // 2. Recursive case
             else
                 return RecursiveHello();
         }
@@ -27,8 +29,12 @@ namespace algo.Algorithm
         // O(2^N)
         public static int FibRecursive(int n)
         {
-            if (n <= 1) return n;
-            else return FibRecursive(n - 2) + FibRecursive(n - 1);
+            // Base case
+            if (n <= 1) 
+                return n;
+            // Recursive case
+            else 
+                return FibRecursive(n - 2) + FibRecursive(n - 1);
         }
 
         public static int FibLoop(int n)

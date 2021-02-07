@@ -4,14 +4,80 @@ using System.Collections.Generic;
 using System.Text.Json;
 using algo.Algorithm;
 using Algo.Exercise;
+using Algo.Algorithm.Exercise;
 
 namespace Algo
 {
     class Program
     {
+        // private static int Count = 0;
+        // private static string Call()
+        // {
+        //     // Exit condition: to stop it running infinitly
+        //     if(Count > 3)
+        //         return "Done!";
+        //     else
+        //     {
+        //         Count++;
+        //         return Call();
+        //     }
+        // }
         static void Main(string[] args)
         {
+            List<Dictionary<string, bool>> data = new List<Dictionary<string, bool>>()
+            {
+                new Dictionary<string, bool>()
+                {
+                    { "gym", false },
+                    { "school", true },
+                    { "store", false }
+                },
+                new Dictionary<string, bool>()
+                {
+                    { "gym", true },
+                    { "school", false },
+                    { "store", false }
+                },
+                new Dictionary<string, bool>()
+                {
+                    { "gym", true },
+                    { "school", true },
+                    { "store", false }
+                },
+                new Dictionary<string, bool>()
+                {
+                    { "gym", false },
+                    { "school", true },
+                    { "store", false }
+                },
+                new Dictionary<string, bool>()
+                {
+                    { "gym", false },
+                    { "school", true },
+                    { "store", true }
+                }
+            };
 
+            var result = BestApartmentToLive.Find(data, new string[] { "gym", "school", "store" });
+            ;
+
+            // MyBinaryTree tree = new MyBinaryTree();
+            // tree.Insert(1);
+            // tree.Insert(2);
+            // tree.Insert(3);
+            // tree.Insert(4);
+            // tree.Insert(5);
+            // tree.Insert(6);
+            // tree.Insert(7);
+            // tree.Insert(8);
+
+            // var result = Recursion2.Fib(50);
+
+            // var input = "I AM CHRIS!";
+            // var output = Recursion2.ReverseString(input);
+            //var result = Recursion2.Factorial(5);
+            //;
+            //Console.WriteLine(Call());
             // var array1 = new int[] { -1, 3, 8, 2, 9, 5 };
             // var array2 = new int[] { 4, 1, 2, 10, 5, 20 };
             // var sum = 24;
@@ -44,7 +110,7 @@ namespace Algo
             // hsTbl.Set("pic", 800.0);
 
             // var keys = hsTbl.Keys();
-            ;
+            //;
             // var obj = hsTbl.Get("apple");
             // obj = hsTbl.Get("pear");
             // obj = hsTbl.Get("zip");
@@ -407,31 +473,31 @@ namespace Algo
             // stack.Pop();
             // stack.Print();
 
-            Exercise.StackImplementedQueue queue = new StackImplementedQueue();
-            queue.Push(1);
-            queue.Push(2);
-            queue.Push(3);
-            queue.Push(4);
-            queue.Push(5);
-            var r = queue.Pop();
-            r = queue.Pop();
-            r = queue.Pop();
-            r = queue.Pop();
-            r = queue.Pop();
-            r = queue.Pop();
+            // Exercise.StackImplementedQueue queue = new StackImplementedQueue();
+            // queue.Push(1);
+            // queue.Push(2);
+            // queue.Push(3);
+            // queue.Push(4);
+            // queue.Push(5);
+            // var r = queue.Pop();
+            // r = queue.Pop();
+            // r = queue.Pop();
+            // r = queue.Pop();
+            // r = queue.Pop();
+            // r = queue.Pop();
 
-            Exercise.QueueImplementedStack stack = new QueueImplementedStack();
-            stack.Push(1);
-            stack.Push(2);
-            stack.Push(3);
-            stack.Push(4);
-            stack.Push(5);
-            var r1 = stack.Pop();
-            r1 = stack.Pop();
-            r1 = stack.Pop();
-            r1 = stack.Pop();
-            r1 = stack.Pop();
-            r1 = stack.Pop();
+            // Exercise.QueueImplementedStack stack = new QueueImplementedStack();
+            // stack.Push(1);
+            // stack.Push(2);
+            // stack.Push(3);
+            // stack.Push(4);
+            // stack.Push(5);
+            // var r1 = stack.Pop();
+            // r1 = stack.Pop();
+            // r1 = stack.Pop();
+            // r1 = stack.Pop();
+            // r1 = stack.Pop();
+            // r1 = stack.Pop();
 
         }
     }
