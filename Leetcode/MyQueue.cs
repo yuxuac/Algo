@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace algo.implement_queue_using_stacks
+namespace Algo.Leetcode
 {
     /* 
     https://leetcode.com/problems/implement-queue-using-stacks/

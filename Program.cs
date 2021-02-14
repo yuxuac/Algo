@@ -5,7 +5,7 @@ using System.Text.Json;
 using algo.Algorithm;
 using Algo.Exercise;
 using Algo.Algorithm.Exercise;
-
+using Algo.Leetcode;
 namespace Algo
 {
     class Program
@@ -24,42 +24,83 @@ namespace Algo
         // }
         static void Main(string[] args)
         {
-            List<Dictionary<string, bool>> data = new List<Dictionary<string, bool>>()
-            {
-                new Dictionary<string, bool>()
-                {
-                    { "gym", false },
-                    { "school", true },
-                    { "store", false }
-                },
-                new Dictionary<string, bool>()
-                {
-                    { "gym", true },
-                    { "school", false },
-                    { "store", false }
-                },
-                new Dictionary<string, bool>()
-                {
-                    { "gym", true },
-                    { "school", true },
-                    { "store", false }
-                },
-                new Dictionary<string, bool>()
-                {
-                    { "gym", false },
-                    { "school", true },
-                    { "store", false }
-                },
-                new Dictionary<string, bool>()
-                {
-                    { "gym", false },
-                    { "school", true },
-                    { "store", true }
-                }
-            };
-
-            var result = BestApartmentToLive.Find(data, new string[] { "gym", "school", "store" });
             ;
+
+            MyCircularQueue queue = new MyCircularQueue(5);
+            queue.EnQueue(1);
+            queue.EnQueue(2);
+            queue.EnQueue(3);
+            queue.EnQueue(4);
+            queue.EnQueue(5);
+
+            queue.DeQueue();
+            queue.DeQueue();
+            queue.EnQueue(1);
+            queue.EnQueue(2);
+            queue.EnQueue(3);
+            // var root = BinaryTree_Serialize.Initialize();
+            // var str = BinaryTree_Serialize.serialize(root);
+            // var root2 = BinaryTree_Serialize.deserialize(str);
+;
+
+            // var data = BinaryTree_LCA.Initialize();
+            // var p = new TreeNode2(5);
+            // var q = new TreeNode2(1);
+            // BinaryTree_LCA.LowestCommonAncestor(data, p, q);
+            // ;
+
+            // var root = PathSum3.InitializeTree();
+            // var result = PathSum3.PathSum(root, 8);
+            
+            // MyBinaryTree mbt = new MyBinaryTree();
+            // mbt.Insert("E");
+            // mbt.Insert("B");
+            // mbt.Insert("F");
+            // mbt.Insert("A");
+            // mbt.Insert("D");
+            // mbt.Insert(null);
+            // mbt.Insert("G");
+            // mbt.Insert(null);
+            // mbt.Insert(null);
+            // mbt.Insert("C");
+            // var length = mbt.Depth();
+            
+            // List<Dictionary<string, bool>> data = new List<Dictionary<string, bool>>()
+            // {
+            //     new Dictionary<string, bool>()
+            //     {
+            //         { "gym", false },
+            //         { "school", true },
+            //         { "store", false }
+            //     },
+            //     new Dictionary<string, bool>()
+            //     {
+            //         { "gym", true },
+            //         { "school", false },
+            //         { "store", false }
+            //     },
+            //     new Dictionary<string, bool>()
+            //     {
+            //         { "gym", true },
+            //         { "school", true },
+            //         { "store", false }
+            //     },
+            //     new Dictionary<string, bool>()
+            //     {
+            //         { "gym", false },
+            //         { "school", true },
+            //         { "store", false }
+            //     },
+            //     new Dictionary<string, bool>()
+            //     {
+            //         { "gym", false },
+            //         { "school", true },
+            //         { "store", true }
+            //     }
+            // };
+
+            // var result = BestApartmentToLive.Find(data, new string[] { "gym", "school", "store" });
+            // ;
 
             // MyBinaryTree tree = new MyBinaryTree();
             // tree.Insert(1);
