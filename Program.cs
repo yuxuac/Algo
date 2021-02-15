@@ -24,6 +24,8 @@ namespace Algo
         // }
         static void Main(string[] args)
         {
+            TwoDimensionArray.Test();
+
             ;
 
             MyCircularQueue queue = new MyCircularQueue(5);
