@@ -36,7 +36,7 @@ namespace Algo.Leetcode
 
         private static void DFS(char[][] grid, int i, int j)
         {
-            if (i < 0 || j < 0 || i >= grid.Length || j >= grid[0].Length || grid[i][j] == 0)
+            if (i < 0 || j < 0 || i >= grid.Length || j >= grid[0].Length || grid[i][j] == '0')
                 return;
 
             grid[i][j] = '0';
